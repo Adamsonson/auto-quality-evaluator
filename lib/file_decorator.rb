@@ -22,8 +22,10 @@ class FileDecorator
   end
 
   def slice_points
-    slice_points = to_array.each_index.select do |i|
-      @slicers.any? { |spliter| to_array[i].include? spliter }
+    split_array = to_array
+
+    slice_points = split_array.each_index.select do |i|
+      @slicers.any? { |spliter| split_array[i].include? spliter }
     end
 
     [0] + slice_points << to_array.length
