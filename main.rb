@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative 'lib/sensor_evaluator'
+require_relative 'lib/helper_methods'
 
-INPUT = 'lib/inpt/log.txt'
+INPUT = 'inpt/log.txt'
 
 def execute
-  SensorEvaluation.new(INPUT).evaluate
+  evaluate(INPUT)
 end
 
-p execute
+puts execute
