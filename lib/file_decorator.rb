@@ -62,7 +62,7 @@ class FileDecorator
 
     data_arr.drop(1).each do |line|
       temp_arr = line.split(' ')
-      sensor_hash[:data] << {temp_arr[0] => temp_arr[1]}
+      sensor_hash[:data] << { timestamp: temp_arr[0], reading: temp_arr[1] }
     end
 
     sensor_hash
