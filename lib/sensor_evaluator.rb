@@ -7,11 +7,11 @@ require_relative 'sensor'
 
 # Evaluates sensor log
 class SensorEvaluator
-  def initialize(log_contents_str)
+  def initialize(log_contents_str, threads)
     @log_contents_str = log_contents_str
     @sensors = %w[thermometer humidity monoxide]
     @log = FileDecorator.new(@log_contents_str, @sensors)
-    @threads = 5
+    @threads = threads
   end
 
   def evaluate

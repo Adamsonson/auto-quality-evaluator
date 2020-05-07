@@ -2,9 +2,9 @@
 
 require_relative 'sensor_evaluator'
 
-def evaluate(input)
+def evaluate(input, threads)
   contents = read(input)
-  SensorEvaluator.new(contents).evaluate
+  SensorEvaluator.new(contents, threads).evaluate
 end
 
 def read(file)
