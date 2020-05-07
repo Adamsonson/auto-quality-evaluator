@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# require 'open-uri'
 require_relative 'sensor_evaluator'
 
 def evaluate(input)
@@ -9,5 +8,7 @@ def evaluate(input)
 end
 
 def read(file)
-  File.open(file).read
+  return File.open(file).read if File.exist? File.expand_path(file)
+
+  file
 end

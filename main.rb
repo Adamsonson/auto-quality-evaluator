@@ -2,7 +2,8 @@
 
 require_relative 'lib/helper_methods'
 
-INPUT = 'inpt/log.txt'
+DEFAULT_LOG_PATH = 'inpt/log.txt'
+INPUT = ARGV.uniq == [] ? DEFAULT_LOG_PATH : ARGV.uniq * ','
 
 def execute
   evaluate(INPUT)
